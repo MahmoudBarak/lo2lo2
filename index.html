@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1a0b18">
+<title>إلى لؤلؤ ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient"></div>
+<div id="hearts" aria-hidden="true"></div>
+
+<audio id="music" preload="auto" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<main>
+  <section id="welcome" class="screen">
+    <div class="glow-heart">♥</div>
+    <p class="eyebrow">رسالة صغيرة من مودي</p>
+    <h1>لؤلؤ <span>❤️</span></h1>
+    <p class="intro">في رسالة نفسي توصلك زي ما هي من قلبي...</p>
+    <button id="startBtn" class="primary">💌 افتحي الرسالة</button>
+    <p class="hint">اضغطي مرة واحدة والموسيقى هتبدأ مع الرسالة 🎵</p>
+  </section>
+
+  <section id="envelopePage" class="screen hidden">
+    <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="افتحي الظرف">
+      <div class="envelope-back"></div>
+      <div class="paper"><span>إلى لؤلؤ ❤️</span></div>
+      <div class="envelope-front"></div>
+      <div class="seal">♥</div>
+    </div>
+    <p class="hint">اضغطي على الظرف 💌</p>
+  </section>
+
+  <section id="letterPage" class="section hidden">
+    <div class="card letter-card">
+      <div class="mini-heart">♥</div>
+      <h2>إلى لؤلؤ ❤️</h2>
+      <p id="typing" class="message" aria-live="polite"></p>
+      <div class="signature">مودي ❤️</div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section hidden">
+    <p class="eyebrow">ذكرياتنا</p>
+    <h2>صورنا الجميلة 📸</h2>
+    <div class="slider" id="slider">
+      <div class="track">
+        <img src="images/1.jpg" alt="ذكرى 1">
+        <img src="images/2.jpg" alt="ذكرى 2">
+        <img src="images/3.jpg" alt="ذكرى 3">
+        <img src="images/4.jpg" alt="ذكرى 4">
+        <img src="images/5.jpg" alt="ذكرى 5">
+        <img src="images/6.jpg" alt="ذكرى 6">
+        <img src="images/7.jpg" alt="ذكرى 7">
+        <img src="images/8.jpg" alt="ذكرى 8">
+        <img src="images/9.jpg" alt="ذكرى 9">
+        <img src="images/10.jpg" alt="ذكرى 10">
+        <img src="images/11.jpg" alt="ذكرى 11">
+        <img src="images/12.jpg" alt="ذكرى 12">
+        <img src="images/13.jpg" alt="ذكرى 13">
+        <img src="images/14.jpg" alt="ذكرى 14">
+        <img src="images/15.jpg" alt="ذكرى 15">
+        <img src="images/16.jpg" alt="ذكرى 16">
+      </div>
+    </div>
+    <p class="swipe">اسحبي الصور يمين وشمال ❤️</p>
+  </section>
+
+  <section id="end" class="section hidden">
+    <div class="card end-card">
+      <div class="big-heart">❤️</div>
+      <h2>بحبك يا لؤلؤ</h2>
+      <p>حقك عليا ❤️</p>
+      <div class="signature">مودي</div>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

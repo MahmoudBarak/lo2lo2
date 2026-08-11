@@ -1,0 +1,63 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--pink:#ff5f91;--rose:#ff8fb1;--purple:#7b3f88;--cream:#fff5f8}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;color:#fff;overflow-x:hidden;
+  font-family:Tahoma,"Segoe UI",Arial,sans-serif;
+  background:
+    radial-gradient(circle at 20% 15%,rgba(255,150,190,.24),transparent 28%),
+    radial-gradient(circle at 85% 75%,rgba(170,100,220,.22),transparent 30%),
+    linear-gradient(145deg,#180b1d 0%,#3a1238 45%,#180b27 100%);
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:32px 32px}
+.ambient{position:fixed;width:260px;height:260px;border-radius:50%;background:#ff4f8b;filter:blur(90px);opacity:.16;top:12%;left:50%;transform:translateX(-50%);pointer-events:none}
+main{position:relative;z-index:2}
+.screen{min-height:100svh;padding:28px 20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.eyebrow{font-size:13px;letter-spacing:1px;opacity:.8;margin-bottom:12px}
+#welcome h1{font-size:clamp(44px,13vw,76px);line-height:1.1;margin:4px 0 18px;text-shadow:0 8px 35px rgba(255,75,135,.45)}
+#welcome h1 span{font-size:.7em}
+.intro{font-size:18px;line-height:1.9;max-width:340px;color:#ffe7ef}
+.primary{margin-top:28px;border:0;border-radius:999px;padding:15px 30px;background:linear-gradient(135deg,#fff,#ffe9f1);color:#d72f68;font-size:17px;font-weight:700;box-shadow:0 14px 35px rgba(0,0,0,.3);cursor:pointer;transition:.25s}
+.primary:active{transform:scale(.96)}
+.hint{margin-top:15px;font-size:12px;opacity:.65}
+.glow-heart{font-size:72px;color:#ff739e;text-shadow:0 0 30px rgba(255,85,145,.7);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+
+.hidden{display:none!important}
+.envelope{position:relative;width:min(78vw,320px);aspect-ratio:1.55/1;cursor:pointer;filter:drop-shadow(0 22px 35px rgba(0,0,0,.4));perspective:900px}
+.envelope-back,.envelope-front{position:absolute;inset:0;border-radius:15px;background:linear-gradient(145deg,#ff759c,#e63e70)}
+.envelope-back{box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.envelope-front{clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);z-index:4}
+.paper{position:absolute;z-index:2;left:8%;width:84%;height:88%;top:8%;border-radius:10px;background:#fff9fb;color:#6f2443;display:flex;align-items:center;justify-content:center;font-weight:700;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.envelope.open .paper{transform:translateY(-48%)}
+.seal{position:absolute;z-index:6;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#e83d70;box-shadow:0 8px 20px rgba(0,0,0,.2);transition:.5s}
+.envelope.open .seal{opacity:0;transform:translate(-50%,-50%) scale(.5)}
+
+.section{padding:75px 18px;max-width:760px;margin:auto}
+.card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:26px;box-shadow:0 22px 60px rgba(0,0,0,.28)}
+.letter-card{text-align:center;padding:32px 22px}
+.mini-heart{font-size:38px;color:#ff8fb1;margin-bottom:10px}
+.letter-card h2,.section>h2{font-size:30px;margin-bottom:24px}
+.message{font-size:19px;line-height:2.15;white-space:pre-line;color:#fff2f6;min-height:300px}
+.signature{margin-top:24px;color:#ffd3e1;font-size:22px;font-weight:700}
+
+.slider{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:8px 2px 18px}
+.slider::-webkit-scrollbar{display:none}
+.track{display:flex;gap:16px;width:max-content}
+.track img{width:min(72vw,280px);height:min(96vw,380px);object-fit:cover;border-radius:22px;scroll-snap-align:center;box-shadow:0 15px 35px rgba(0,0,0,.4);user-select:none;-webkit-user-drag:none;transition:transform .25s}
+.track img:active{transform:scale(.98)}
+.swipe{text-align:center;opacity:.6;font-size:12px}
+.end-card{text-align:center;padding:45px 24px}
+.big-heart{font-size:55px;animation:pulse 1.8s infinite}
+.end-card h2{font-size:34px;margin:18px 0 10px}
+.end-card p{font-size:20px;color:#ffe2eb}
+
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}
+.float-heart{position:absolute;bottom:-40px;opacity:0;animation:floatUp linear forwards}
+@keyframes floatUp{0%{transform:translateY(0) scale(.7) rotate(0);opacity:0}15%{opacity:.75}100%{transform:translateY(-115vh) scale(1.15) rotate(25deg);opacity:0}}
+
+@media(max-width:420px){
+  .section{padding:58px 14px}
+  .message{font-size:18px;min-height:280px}
+  .letter-card{padding:28px 18px}
+}
